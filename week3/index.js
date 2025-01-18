@@ -85,7 +85,7 @@ function addPurchaseRecord(name,courses ) {
 function calculateTotalPrice() {
 
     let totalPrice = 0;
-    purchaseRecords.array.forEach(order => {
+    purchaseRecords.forEach(order => {
         totalPrice += order.total;
     });
     console.log(`目前總營業額為 ${totalPrice} 元`)
@@ -103,9 +103,21 @@ function filterNoPurchaseMember(){
     //forEach取紀錄來刪除set裡的名字
     //把set的裡的名字印出
     let membersSet = new Set(members);
-    purchaseRecords.array.forEach(order => {
+    purchaseRecords.forEach(order => {
         membersSet.delete(order.name);
     });
 
-    console.log(`未購買課程的會員有： ${membersSet} `)
+    let unBuyingMember = Array.from(membersSet);
+    let unBuyingMemberString = unBuyingMember.join(',');
+
+    console.log(`未購買課程的會員有： ${unBuyingMemberString} `)
 };
+
+addPurchaseRecord("Alice", 4);
+addPurchaseRecord("Bob", 12);
+addPurchaseRecord("Hannah", 50);
+addPurchaseRecord("名稱", "課程數量");
+
+calculateTotalPrice()
+
+filterNoPurchaseMember()
