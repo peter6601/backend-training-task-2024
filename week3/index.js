@@ -69,7 +69,6 @@ function addPurchaseRecord(name,courses ) {
         } else {
             console.log('輸入錯誤，請輸入有效的課程數量')
         }
-        console.log('輸入錯誤，請輸入有效的會員名稱和課程數量。')
     } else {
         console.log('輸入錯誤，請輸入有效的會員名稱')
     }
