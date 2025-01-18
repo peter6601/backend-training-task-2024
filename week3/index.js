@@ -112,12 +112,3 @@ function filterNoPurchaseMember(){
 
     console.log(`未購買課程的會員有： ${unBuyingMemberString} `)
 };
-
-addPurchaseRecord("Alice", 4);
-addPurchaseRecord("Bob", 12);
-addPurchaseRecord("Hannah", 50);
-addPurchaseRecord("名稱", "課程數量");
-
-calculateTotalPrice()
-
-filterNoPurchaseMember()
